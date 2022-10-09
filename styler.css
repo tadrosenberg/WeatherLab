@@ -1,9 +1,17 @@
 * {
-    margin: 50px;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
     text-align: center;
+    font-family: "marker felt";
+}
+
+h1 {
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #20B2AA;
 }
