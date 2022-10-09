@@ -12,6 +12,32 @@ body {
 h1 {
     color: white;
     padding: 10px;
-    margin-bottom: 15px;
     background-color: #20B2AA;
+}
+
+form {
+    background-color: #B0C4DE;
+    padding: 20px;
+}
+
+#weatherResults {
+    margin: 20px 0 20px 0;
+}
+#forecastResults {
+    background-color: #FAF0E6;
+}
+#forecastHeader {
+    margin:10px 0 10px 0;
+}
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    height: 50px;
+    padding: 20px;
+    vertical-align: center;
+    background-color: #B0C4DE;
 }

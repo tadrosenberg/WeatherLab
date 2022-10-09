@@ -16,7 +16,7 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
 	      results += '<img src="http://openweathermap.org/img/w/' + json.weather[i].icon + '.png"/>';
       }
       results += '<h2>' + json.main.temp + " &deg;F</h2>"
-      results += '<h2> Wind Speed: ' + json.wind.speed + '</h2>';
+      // results += '<h2> Wind Speed: ' + json.wind.speed + '</h2>';
       results += "<p>"
       for (let i=0; i < json.weather.length; i++) {
 	      results += json.weather[i].description
@@ -33,6 +33,7 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
         }).then(function(json) {
           console.log(json);
           let forecast = "";
+          forecast += "<h2 id='forecastHeader'> 5-Day Forecast <h2>";
           for (let i = 0; i < json.list.length; i++) {
             forecast += "<h2>" + moment(json.list[i].dt_txt).format('MMMM Do YYYY, h:mm:ss a') + "</h2>";
             forecast += "<p>Temperature: " + json.list[i].main.temp + "</p>";
