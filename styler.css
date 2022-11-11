@@ -15,6 +15,11 @@ h1 {
     background-color: #20B2AA;
 }
 
+h3 {
+    font-style: italic;
+    size: 70%;
+}
+
 form {
     background-color: #B0C4DE;
     padding: 20px;

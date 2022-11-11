@@ -16,13 +16,14 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
 	      results += '<img src="http://openweathermap.org/img/w/' + json.weather[i].icon + '.png"/>';
       }
       results += '<h2>' + json.main.temp + " &deg;F</h2>"
-      // results += '<h2> Wind Speed: ' + json.wind.speed + '</h2>';
+      results += '<h3>(Feels Like: ' + json.main.feels_like + ' &deg;F)</h3>';
       results += "<p>"
       for (let i=0; i < json.weather.length; i++) {
 	      results += json.weather[i].description
 	      if (i !== json.weather.length - 1)
 	        results += ", "
       }
+      results += ', wind speed: ' + json.wind.speed + 'm/sec , humidity: ' + json.main.humidity + '%'
       results += "</p>";
       document.getElementById("weatherResults").innerHTML = results;
     });
@@ -36,7 +37,7 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
           forecast += "<h2 id='forecastHeader'> 5-Day Forecast <h2>";
           for (let i = 0; i < json.list.length; i++) {
             forecast += "<h2>" + moment(json.list[i].dt_txt).format('MMMM Do YYYY, h:mm:ss a') + "</h2>";
-            forecast += "<p>Temperature: " + json.list[i].main.temp + "</p>";
+            forecast += "<p>Temperature: " + json.list[i].main.temp + ", Feels Like: " + json.list[i].main.feels_like + "</p>";
             forecast += '<img src="http://openweathermap.org/img/w/' + json.list[i].weather[0].icon + '.png"/>'
           }
           document.getElementById("forecastResults").innerHTML = forecast;
